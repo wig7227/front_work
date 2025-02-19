@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배경 스타일</title>
+    <link rel="stylesheet" href="resources/css/11.style.css">
+</head>
+<body>
+    <h1>배경 관련 스타일(background~)</h1>
+
+    <h3>background-color : 배경색 지정</h3>
+
+    <div id="div-bg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione porro libero obcaecati consectetur illo accusantium, dolore adipisci repudiandae quod itaque maxime, quos neque quo delectus unde fugit voluptates autem nobis.</div>
+
+    <hr>
+
+    <h3>background-clip : 배경을 적용시키는 범위 지정</h3>
+    <pre>
+        선택자{
+            background-clip: border-box(기본값)|padding-box|content-box
+        }
+    </pre>
+
+    <div class="div-test" id="div1">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt voluptas maiores nostrum ipsam debitis placeat amet numquam ratione quis nemo eligendi, unde culpa molestiae minima id quam totam! Debitis, temporibus.</div>
+    <div class="div-test" id="div2">Est laboriosam quae nulla cupiditate magni quia enim facilis amet voluptatibus quidem, nemo vel ea ad quaerat porro ex repellendus recusandae natus in ipsa libero ducimus repudiandae non. Pariatur, commodi!</div>
+    <div class="div-test" id="div3">Qui repellendus quis in quia eaque quidem deleniti dolorem nulla commodi dolor ea officiis, sint possimus id quo. Aliquam totam architecto soluta vitae consectetur ut? Nihil quibusdam soluta dolorem sint!</div>
+
+    <hr>
+
+    <h3>background-image : 배경에 이미지 넣기</h3>
+    <pre>
+        선택자{
+            background-image: url("이미지 경로");
+            background-repeat: repeat|repeat-x|repeat-y|no-repeat;
+            background-size: auto|contain|cover|px px|% %;
+            background-position: 좌/우/가운데 위/아래/가운데|px px|% %;
+            background-attachment: scroll|fixed|
+        }
+    </pre>
+    <div id="bg-img"><img src="" alt=""></div>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>

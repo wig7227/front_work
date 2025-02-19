@@ -96,15 +96,15 @@ input[type=checkbox]:checked+label{
 }
 
 input[name^=user]:focus{
-    background-color: pink;
+    background-color: rgb(63, 81, 143);
 }
 
 button:enabled {
-    color: rgb(184, 131, 233);
+    color: rgb(93, 26, 155);
 }
 
 button:disabled {
-    color: rgb(177, 177, 177);
+    color: rgb(214, 53, 53);
 }
 
 /*========================= 6. 일반 구조 선택자 =======================*/

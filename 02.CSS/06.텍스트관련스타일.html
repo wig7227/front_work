@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>텍스트 관련 스타일</title>
+</head>
+<body>
+    <h1>텍스트 관련 스타일</h1>
+    <h3>1. color : 텍스트의 색상 지정</h3>
+    <pre>
+        선택자{
+            color : 색상명|16진수|rgb(x,x,x)|rgba(x,x,x,x)|hs1(x,x,x)|hsla(x,x,x,x)
+        }
+    </pre>
+
+    <!-------------------------style------------------------->
+    <style>
+        pre{
+            /* color: seagreen; */
+            /* color: #9335f2; */
+            /* color: rgb(21, 21, 184); */
+            /*color: rgba(0, 84, 255, 0.9);*/   /* 0:투명, 1:불투명*/
+            /*color: hsl(330,90%,80%);*/
+            color: hsla(0, 94%, 33%, 0.5);
+        }
+    </style>
+
+    <hr>
+
+    <h3>2. text-decoration : 텍스트에 줄을 긋서나 줄을 없앨 때 사용</h3>
+    <pre>
+        선택자 {
+            text-decoration: none|underline|overline|line-through;
+        }
+    </pre>
+
+    <ul>
+        <li id="td1">텍스트 영역 아래 줄 긋기</li><br>
+        <li id="td2">텍스트 영역 중간에 줄 긋기</li><br>
+        <li id="td3">텍스트 영역 위에 줄 긋기</li>
+    </ul>
+
+    <a href="https://google.com" target="_blank">구글 사이트</a>
+
+    <!-----------------------style----------------------->
+    <style>
+        #td1 {text-decoration: underline;}
+        #td2 {text-decoration: line-through;}
+        #td3 {text-decoration: overline;}
+        a {text-decoration: none; color: black;}
+    </style>
+
+    <hr>
+
+    <h3>3. text-transform : 영문 텍스트의 대소문자 변환</h3>
+    <pre>
+        선택자 {
+            text-transform : uppercase|lowercase|capitalize;
+        }
+    </pre>
+
+    <ol type="a" start="5">
+        <li id="tt1">uppercase : 모든영문자를 대문자로</li>
+        <li id="tt2">LOWERCASE : 모든영문자를 소문자로</li>
+        <li id="tt3">capitalize : 영문자의 first text만 대문자로</li>
+    </ol>
+
+    <!---------------------style----------------------->
+    <style>
+        #tt1 {text-transform: uppercase;}
+        #tt2 {text-transform: lowercase;}
+        #tt3 {text-transform: capitalize;}
+    </style>
+
+<h3>4. text-shadow : 텍스트에 그림자 효과</h3>
+<pre>
+    선택자 {
+        text-shadow : 가로거리(x), 세로거리(y) [번짐정도] [색상];
+    }
+</pre>
+
+<div>
+    <span class="shadow" id="ts1">HTML</span><br><br>
+    <span class="shadow" id="ts2">HTML</span><br><br>
+    <span class="shadow" id="ts3">HTML</span>
+</div>
+
+<!-------------------------style------------------------->
+<style>
+    .shadow{
+        font-size: 50px;
+        font-weight: 900;
+    }
+    #ts1{
+        color :orangered;
+        /* text-shadow: 5px 5px; */
+        text-shadow: 5px 5px 10px rgb(3, 100, 104);
+    }
+    #ts2 {
+        color: white;
+        text-shadow: 0 0 10px black;
+    }
+    #ts3 {
+        text-shadow: 0 0 4px gray,
+                     0 -5px 4px rgb(214, 214, 214),
+                     0 -10px 8px orange,
+                     0 -15px 14px orangered,
+                     0 -20px 20px red;
+    }
+
+</style>
+
+<hr>
+
+<h3>5. text-align : 텍스트 정렬</h3>
+<pre>
+    선택자{
+        text-align:left(기본값)|right|center|justify
+    }
+</pre>
+
+<h4>왼쪽정렬(기본값)</h4>
+<p><span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium error odio vitae aspernatur, placeat labore itaque recusandae odit fugiat nisi expedita natus ad consectetur voluptatum. Ratione quasi eaque ipsa commodi.</span><span>Dolorum odit amet doloremque libero fuga suscipit laboriosam quis necessitatibus, labore, porro tenetur dolores obcaecati cum eum debitis ducimus quia alias architecto voluptatem animi ut sed! Eos beatae labore atque!</span></p>
+
+<h4>오른쪽정렬</h4>
+<p id="right"><span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit, veritatis sit voluptate corporis corrupti consectetur! Sint, alias perspiciatis. Ratione ab magnam animi illo quos quia aperiam similique eaque eum facere.</span><span>Quam nulla sint sed maiores laudantium quos odit laboriosam pariatur quibusdam obcaecati provident nobis, culpa earum dolor tempore vel quod! Consequatur accusantium nesciunt quidem aperiam temporibus hic dignissimos sit iste.</span></p>
+
+<h4>가운데정렬</h4>
+<p id="center"><span>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel, dolorum perferendis! Laborum sequi aperiam assumenda id! Fugiat, accusantium magnam illo laborum at a ea voluptatum corporis obcaecati quam non nulla!</span><span>Vel, esse sequi, id ipsa possimus iure sint earum alias unde vitae asperiores corrupti voluptatem ex perferendis quos odit quae sit voluptatibus sed obcaecati nemo commodi doloremque similique consequatur. Et?</span></p>
+
+<h4>양쪽정렬</h4>
+<p id="justify"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet alias distinctio culpa ipsam molestias esse fugiat, sint nisi assumenda eius quos nesciunt velit quidem veniam exercitationem accusantium, sed tempora cum?</span><span>Deserunt, ipsum molestiae voluptatem cupiditate neque aperiam laudantium facere enim iure obcaecati illum? Quos consequuntur iusto perspiciatis inventore illo cupiditate ipsum eveniet optio magni dolorem aliquam quasi nobis, qui error?</span></p>
+
+<!-------------------------------style------------------------------->
+<style>
+    #right{text-align: right;}
+    #center{text-align: center;}
+    #justify{text-align: justify;}
+</style>
+
+<hr>
+
+<h3>6. line-height : 줄 간격 조절할 떄</h3>
+<pre>
+    선택자 {
+        line-height: normal|px|em|%;
+    }
+</pre>
+
+<h4>px 고정길이 간격</h4>
+<p id="lineH1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore asperiores architecto amet corporis. Alias libero consequatur quae ut sed vitae harum molestias, cumque repellat, necessitatibus praesentium. A iure earum eos.</p>
+<h4>em 가변길이 간격</h4>
+<p id="lineH2">Soluta vero commodi deserunt sequi blanditiis maxime, velit totam nulla facere hic qui quasi quidem maiores temporibus ducimus repudiandae illo quis dolores omnis similique inventore laboriosam explicabo mollitia? Doloribus, consequatur?</p>
+<h4>% 비율 간격</h4>
+
+<div id="lineDiv">글씨 넣기</div>
+
+<!----------------------------style--------------------------->
+<style>
+    #lineH1 {line-height: 30px;}
+    #lineH2 {line-height: 3em;}
+    #lineH3 {line-height: 200%;}
+
+    #lineDiv{
+        width: 200px;
+        height:  200px;
+        border: 1px solid;
+        line-height: 200px;
+        text-align: center;
+    }
+</style>
+
+<p id="lineH3">Veritatis sunt, delectus qui, nemo corporis doloribus, excepturi nulla ab saepe natus molestias quos quae? Maxime numquam ducimus minima perferendis unde eius tenetur facilis veritatis natus omnis, odit ex nulla?</p>
+</body>
+</html>
