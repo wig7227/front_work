@@ -1,0 +1,14 @@
+h1{
+    text-align: center;
+}
+table{
+    border: 1px solid;
+    margin: auto;
+    width: 700px;
+    height: 700px;
+
+}
+table>td>input{
+    margin: 150px;
+    
+}

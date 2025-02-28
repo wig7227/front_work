@@ -64,10 +64,10 @@
             const {type: type2, color:color2, year:year2} = car;
             console.log(type2, color2, year2);
 
-            const fun1 = function(자동차) {
-                const {type, color} = car;
-                console.log(type);
-                console.log(color);
+            const fun1 = (n) => {
+                const {type, color} = n;
+                console.log(n.type);
+                console.log(n.color);
             };
             fun1(car);
 
