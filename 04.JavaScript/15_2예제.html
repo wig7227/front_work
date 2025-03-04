@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>예제</title>
+    <script src="resources/js/jquery-3.7.1.min.js"></script>
     <link rel="stylesheet" href="resources/css/15.style.css">
 </head>
 <body>
@@ -11,48 +12,68 @@
     <table>
         <form action="test.do">
         <tr>
-            <td colspan="2">
-                * 아이디: <input name="userId" id="userId"> 
+            <td>
+                * 아이디:
+            </td>
+            <td>
+                <input name="userId" id="userId" required> 
             </td>
         </tr>
         <tr>
-            <td>
+            <td colspan="2">
                 첫글자는 반드시 영문자하고 영문자, 숫자 포함 총 4~12자로 입력하시오. 
             </td>
         </tr>
         <tr>
-            <td colspan="2">
-                *비밀번호 : <input type="password" name="userPw" id="userPw"> 
+            <td>
+                * 비밀번호 :
+            </td>
+            <td>
+                <input type="password" name="userPw" id="userPw"> 
             </td>
         </tr>
         <tr>
-            <td>
+            <td colspan="2">
                 영문자,숫자,특수문자로 총 8~15자로 입력하시오.
             </td>
         </tr>
         <tr>
-            <td colspan="2">
-                *비밀번호 확인 : <input type="password" name="checkPw" id="checkPw">
+            <td>
+                *비밀번호 확인 :
+            </td>
+            <td>
+                <input type="password" name="checkPw" id="checkPw">
             </td>
         </tr>
         <tr>
-            <td>
+            <td colspan="2">
                 위의 비밀번호와 일치하게 입력하시오.
             </td>
         </tr>
         <tr>
-            <td colspan="2">
-                *이름  : <input name="nname" id="nname">
+            <td>
+                *이름  :
+            </td>
+            <td>
+                <input name="nname" id="nname">
             </td>
         </tr>
         <tr>
-            <td>
+            <td colspan="2">
                 한글로만 이루어져 있어야 되면 2글자 이상으로 입력하시오.
             </td>
         </tr>
         <tr>
+            <td>
+                *이메일  :
+            </td>
+            <td>
+                <input type="email" name="email" id="email">
+            </td>
+        </tr>
+        <tr>
             <td colspan="2">
-                *이메일  : <input name="email" id="email">
+                이메일 형식에 맞춰 입력하세요
             </td>
         </tr>
         <tr>
@@ -61,17 +82,24 @@
             </td>
         </tr>
         <tr>
-            <td colspan="2">
-                *취미  : <input name="hobby" id="hobby"> <br>
+            <td>
+                *취미  :
+            </td>
+            <td>
+                <input name="hobby" id="hobby"> <br>
             </td>
         </tr>
         <tr>
-            <td colspan="2">
-                *거주지  : <select name="adress" id="adress">
+            <td>
+                *거주지  :
+            </td>
+            <td>
+                <select name="adress" id="adress">
                     <option value="서울">서울</option>
                     <option value="경기">경기</option>
                     <option value="부산">부산</option>
                     <option value="대전">대전</option>
+                    <option value="기타">기타</option>
                 </select>
             </td>
         </tr>
@@ -82,12 +110,11 @@
         </tr>
 
         <tr>
-            <td>
-                <input type="submit" onclick="return validate();">
+            <td >
+                <input type="submit" id="btn" value="회원가입" onclick="return validate();">
             </td>
-
             <td>
-                <button onclick="취소">취소</button>
+                <input type="reset" id="btn" value="취소" onclick="return validate()">
             </td>
         </tr>
     </form>
@@ -98,7 +125,7 @@
             const userPw = document.getElementById('userPw').value;
             const checkPw = document.getElementById('checkPw').value;
             const nname = document.getElementById('nname').value;
-            const email = document.getElementById('email').value;
+            const email = document.getElementById('email');
             const hobby = document.getElementById('hobby').value;
             const adress = document.getElementById('adress').value;
 
@@ -107,32 +134,39 @@
                 return false;
             }
 
-            let regExp = /^[a-zA-Z][a-zA-Z0-9]+$/;
-            if (regExp.test(userId)){
-                alert('아이디가 유효한 형식입니다');
-            }else{
+            let regExp = /^[a-zA-Z][a-zA-Z0-9]{3,11}/;
+            if (!regExp.test(userId)){
                 alert('아이디를 잘못입력하였습니다');
+                return false;
             }
 
-            let regExp2 = /.{8-15}$/;
-            if (regExp2.test(userPw)){
-                alert('비밀번호가 유효한 형식입니다');
-            }else{
-                alert('비밀번호를 잘못입력하였습니다');
+            regExp = /^[a-z0-9!@#$%^&*]{8-15}$/i;
+            if (!regExp.test(userPw)){
+                alert('유효한 이메일을 입력해 주세요');
+                userPw.value = "";
+                userPw.select();
+                return false;
             }
 
-            let regExp3 = /^[가-힣]{2,}$/;
-            if (regExp3.test(nname)){
-                alert('이름이 유효한 형식입니다');
-            }else{
-                alert('이름이 잘못입력하였습니다');
+            regExp = /^[가-힣]{2,}$/;
+            if (!regExp.test(nname)){
+                alert('이름을 잘못입력하였습니다');
+                return false;
             }
 
-
+            //regExp = /^[a-zA-Z0-9]+@[a-z]+\.[a-z]{2,3}$/;
+            regExp = /\w+@[a-z]+\.[a-z]{2,}(\.[a-z]{2})?/;
+            if (!regExp.test(email.value)){
+                alert('유효한 이메일을 입력해 주세요');
+                return false;
+            }
 
             
 
         }
+    </script>
+    <script>
+        $('input').filter('#btn').css({width:'110px', height:'35px',magin:'50px'});
     </script>
 </body>
 </html>

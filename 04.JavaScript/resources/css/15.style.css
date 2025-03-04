@@ -2,13 +2,9 @@ h1{
     text-align: center;
 }
 table{
+    align-content: center;
     border: 1px solid;
-    margin: auto;
-    width: 700px;
-    height: 700px;
-
-}
-table>td>input{
-    margin: 150px;
-    
+    width: 500px;
+    height: 500px;
+    margin-left: 150px;
 }
