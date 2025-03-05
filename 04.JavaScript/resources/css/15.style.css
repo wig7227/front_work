@@ -8,3 +8,10 @@ table{
     height: 500px;
     margin-left: 150px;
 }
+.button {
+    text-align: center;
+    
+}
+.button input {
+    margin: 0 25px;
+}
