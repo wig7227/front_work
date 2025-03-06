@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="resources/js/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    <title>Document</title>
+    <style>
+        a {
+            text-decoration: none;
+            color: rgb(255, 141, 141);
+            width: 150px;
+            height: 30px;
+        }
+
+        li {
+            width: 150px;
+            height: 30px;
+            border: 1px solid;
+            float: left;
+            padding: 5px;
+            text-align: center;
+            line-height: 30px;
+            margin: 10px;
+            background-color: black;
+            color: white;
+        }
+        /* li:hover{
+            background-color: gray;
+        } */
+    </style>
+
+    <script>
+        $(() => {
+            $('li').hover(function(){ 
+                let overColor = $(this).attr('data-bg');
+                console.log(overColor)
+                $(this).stop().animate({'background-color':'gray',
+                                         'color':'white'}
+                                        ,500)
+            }, function(){
+                $(this).stop().animate({'background-color':'black',
+                                        'color':'white'}
+                                        ,500)
+            });
+        })
+    </script>
+</head>
+<body>
+    <ul>
+        <li><a href='01.jQuery개요.html' data-bg="#D9418C">Home</a></li>
+        <li><a href='01.jQuery개요.html' data-bg="#CC3D3D">About</a></li>
+        <li><a href='01.jQuery개요.html' data-bg="#C4B73B">Portfolio</a></li>
+        <li><a href='01.jQuery개요.html' data-bg="#3DB7CC">Contact</a></li>
+    </ul>
+</body>
+</html>
